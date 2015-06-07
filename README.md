@@ -16,17 +16,17 @@ Installation
 
 ### Requirements
 
-* OpenCV (www.opencv.org) >= 3.0-rc1 with Python bindings
-* OpenBlas
-* Scientific python stack with NumPy, SciPy, Scikit-Learn, Cython, and Matplotlib.
+* [OpenCV](http://www.opencv.org) >= 3.0-rc1 with Python bindings
+* [OpenBlas](http://www.openblas.net)
+* Scientific Python stack with NumPy, SciPy, Scikit-Learn, Cython, and Matplotlib.
 
-The easiest way to get the required scientific python stack is to install a distribution such as
-[Anaconda](https://store.continuum.io/cshop/anaconda/)
+The easiest way to get the required scientific Python stack is to install a distribution such as
+[Anaconda](https://store.continuum.io/cshop/anaconda/).
 
 
 #### A note about libviso2
 
-In order to obtain the best results, we recommend using the LibViso2 features as described in
+In order to obtain the best results, we recommend using the libviso2 features as described in
 
     @INPROCEEDINGS{Geiger2011IV,
       author = {Andreas Geiger and Julius Ziegler and Christoph Stiller},
