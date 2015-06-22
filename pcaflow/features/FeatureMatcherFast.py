@@ -40,10 +40,13 @@ class FeatureMatcherFast:
         self.h = h
         self.w = w
 
-        if I.ndim > 2:
-            I_ = clahe.convert_color(I)
+        if self.params['features_clahe'] > 0:
+            if I.ndim > 2:
+                I_ = clahe.convert_color(I)
+            else:
+                I_ = clahe.convert_bw(I)
         else:
-            I_ = clahe.convert_bw(I)
+            I_ = I.copy()
 
         kp_in_opencv = self.fast_detector.detect(I_)
         kp_in = np.array([P.pt for P in kp_in_opencv])

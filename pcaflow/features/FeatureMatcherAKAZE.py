@@ -40,10 +40,13 @@ class FeatureMatcherAKAZE:
         self.h = h
         self.w = w
 
-        if I.ndim > 2:
-            I_ = clahe.convert_color(I)
+        if self.params['features_clahe'] > 0:
+            if I.ndim > 2:
+                I_ = clahe.convert_color(I)
+            else:
+                I_ = clahe.convert_bw(I)
         else:
-            I_ = clahe.convert_bw(I)
+            I_ = I.copy()
 
         print(I_.dtype)
 
