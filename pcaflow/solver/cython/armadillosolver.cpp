@@ -276,7 +276,11 @@ void ArmadilloSolver::solve_irls()
         // Cauchy error
         // Note that the error would be 1.0/(1+f**2), but since we do not take the square
         // root above, we can omit the squaring here.
-        wsq.transform( [](float f) {return 1.0/(1.0+f); } );
+        for (int j=0; j < wsq.n_elem; j++)
+        {
+            wsq[j] = 1.0/(1.0+wsq[j]);
+        }
+        //wsq.transform( [](float f) {return 1.0/(1.0+f); } );
         wsq = sqrt(wsq);
     }
 

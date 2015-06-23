@@ -13,6 +13,7 @@ setup(ext_modules = cythonize(Extension("*",
         #libraries = ['armadillo',], 
         #library_dirs = ['../../extern/armadillo/',],
         include_dirs = [numpy.get_include(), '../../extern/armadillo/include'],
-        extra_compile_args=["-O3", "-std=c++11", "-stdlib=libc++", "-mmacosx-version-min=10.7", "-march=native", "-DARMA_DONT_USE_WRAPPER"],
+        #extra_compile_args=["-O3", "-std=c++11", "-stdlib=libc++", "-mmacosx-version-min=10.7", "-march=native", "-DARMA_DONT_USE_WRAPPER"],
+        extra_compile_args=["-O3", "-stdlib=libc++", "-mmacosx-version-min=10.7", "-march=native", "-DARMA_DONT_USE_WRAPPER"],
         extra_link_args=["-framework", "Accelerate"],
         language="c++",)))

@@ -13,6 +13,7 @@ setup(ext_modules = cythonize(Extension("*",
         #libraries = ['armadillo',], 
         #library_dirs = ['../../extern/armadillo/',],
         include_dirs = [numpy.get_include(), '../../extern/armadillo/include'],
-        extra_compile_args=["-O3", "-std=c++11", "-march=native", "-DARMA_DONT_USE_WRAPPER"],
+        #extra_compile_args=["-O3", "-std=c++11", "-march=native", "-DARMA_DONT_USE_WRAPPER"],
+        extra_compile_args=["-O3", "-march=native", "-DARMA_DONT_USE_WRAPPER"],
         libraries = ['openblas','gfortran'],
         language="c++",)))
