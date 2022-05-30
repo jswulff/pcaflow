@@ -1,6 +1,8 @@
 PCA-Flow: Fast, approximate optical flow computation
 ====================================================
 
+*UPDATE (05/29/2022): Due to the legacy character of this codebase, please make sure to use Python2.*
+
 This software package contains two algorithms for the computation of optical flow, as described in Wulff & Black, "Efficient Sparse-to-Dense Optical Flow Estimation using a Learned Basis and Layers" (CVPR 2015).
 
 *PCA-Flow* computes approximate optical flow extremely fast, by making the assumption that optical flow lies on a low-dimensional subspace.
@@ -16,6 +18,7 @@ Installation
 
 ### Requirements
 
+* Python2
 * [OpenCV](http://www.opencv.org) >= 3.0-rc1 with Python bindings
 * [OpenBlas](http://www.openblas.net)
 * Scientific Python stack with NumPy, SciPy, Scikit-Learn, Cython, and Matplotlib.

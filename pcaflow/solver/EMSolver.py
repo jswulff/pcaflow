@@ -636,8 +636,9 @@ class EMSolver:
 
                 # Fit Gaussian to selected color points, and compute score for
                 # all pixels.
-                G = mixture.GMM(n_components=nc,covariance_type='full').fit(P)
-                score = G.score(color_all)
+                G = mixture.GaussianMixture(n_components=nc,covariance_type='full').fit(P)
+                #score = G.score(color_all)
+                score = G.score_samples(color_all)
                 
             else:
                 # Simple fallback.

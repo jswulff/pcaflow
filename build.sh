@@ -14,15 +14,15 @@ NC='\033[0m'
 
 printf "${GREEN}Checking for libraries... \n${NC}"
 
-names=( NumPy SciPy Cython Scikit-Learn OpenCV )
-libs=( numpy scipy cython sklearn cv2 )
+names=( NumPy SciPy Cython Scikit-Learn OpenCV ImageIO Matplotlib)
+libs=( numpy scipy cython sklearn cv2 imageio matplotlib)
 nlibs=$[${#names[@]}-1]
 for i in $(seq 0 ${nlibs})
 do
     n=${names[$i]}
     l=${libs[$i]}
     printf "${GREEN}    $n...${NC}"
-    if python -c "import $l" > /dev/null
+    if python2 -c "import $l" > /dev/null
     then
         printf "${GREEN}Found. \n${NC}"
     else
@@ -78,7 +78,7 @@ else
         printf "${RED}Continuing without download. Please provide your own principal components. \n${NC}"
     else
         printf "${GREEN}Downloading principal components... \n${NC}"
-        curl http://files.is.tue.mpg.de/jwulff/pcaflow/principal_components.zip > principal_components.zip
+        curl https://files.is.tue.mpg.de/jwulff/pcaflow/principal_components.zip > principal_components.zip
         printf "${GREEN}Extracting principal components into data/... \n${NC}"
         mkdir -pv data/
         unzip -o principal_components.zip -d data/
